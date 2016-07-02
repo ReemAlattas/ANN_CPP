@@ -14,7 +14,7 @@ using namespace std;
 class Net
 {
 public:
-    Net(topolgy);
+    Net(const vector<unsigned> &topolgy);
     void feedForward(const vector<double> &inputVals);
     void backProp(const vector<double> &targetVals);
     void getResults(vector<double> &resultVals) const;
@@ -25,6 +25,7 @@ private:
 
 int main(int argc, const char * argv[]) {
     
+    vector<unsigned> topology;
     Net myNet(topology);
 
     vector<double> inputVals;

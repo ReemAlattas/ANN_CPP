@@ -8,8 +8,21 @@
 
 #include <iostream>
 
+class Net
+{
+public:
+    
+private:
+    
+};
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Net myNet(topology);
+    
+    myNet.feedforward(inputVals);
+    myNet.backProp(targetVals);
+    myNet.getResults(resultVals);
+    
     return 0;
 }

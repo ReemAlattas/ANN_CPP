@@ -11,6 +11,10 @@
 
 using namespace std;
 
+class Neuron;
+
+typedef vector<Neuron> Layer;
+
 class Net
 {
 public:
@@ -20,8 +24,21 @@ public:
     void getResults(vector<double> &resultVals) const;
     
 private:
-    
+    vector<Layer> m_layers;
+
 };
+
+Net::Net(const vector<unsigned> &topolgy);
+{
+    unassigned numLayers = topology.size();
+    for (unsigned layerNum = 0; layerNum <numLayers; ++layerNum) {
+        m_layers.push_back(Layer());
+        
+        for (unsigned neuwonNum = 0; neuronNum <= topology[layerNum]; ++neuronNums) {
+            m_layers.back()
+        }
+    }
+}
 
 int main(int argc, const char * argv[]) {
     

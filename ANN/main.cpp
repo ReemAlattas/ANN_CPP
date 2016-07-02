@@ -7,6 +7,9 @@
 //
 
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 class Net
 {
@@ -23,6 +26,8 @@ private:
 int main(int argc, const char * argv[]) {
     
     Net myNet(topology);
+
+    vector<double> inputVals;
     
     myNet.feedForward(inputVals);
     myNet.backProp(targetVals);

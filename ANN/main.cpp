@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 
@@ -17,16 +18,29 @@ struct Connection
     double deltaWeight;
 };
 
+/*******************   class Neuron   **************************/
+
 class Neuron {
 public:
     Neuron(unsigned numOutputs);
     
 private:
+    static double randomWeight(void) { return rand() / double(RAND_MAX); }
     double m_outpuVal;
     vector<Connection> m_outputWeights;
 };
 
+Neuron::Neuron(unsigned numOutputs)
+{
+    for (unsigned c =0; c < numOutputs; c++) {
+        m_outputWeights.push_back(Connection());
+        m_outputWeights.back().weight = randomWeight();
+    }
+}
+
 typedef vector<Neuron> Layer;
+
+/*******************   class Net   **************************/
 
 class Net
 {

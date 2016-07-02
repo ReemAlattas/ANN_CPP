@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class Neuron;
+class Neuron {};
 
 typedef vector<Neuron> Layer;
 
@@ -28,14 +28,15 @@ private:
 
 };
 
-Net::Net(const vector<unsigned> &topolgy);
+Net::Net(const vector<unsigned> &topology)
 {
-    unassigned numLayers = topology.size();
+    unsigned long numLayers = topology.size();
     for (unsigned layerNum = 0; layerNum <numLayers; ++layerNum) {
         m_layers.push_back(Layer());
         
-        for (unsigned neuwonNum = 0; neuronNum <= topology[layerNum]; ++neuronNums) {
-            m_layers.back()
+        for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum) {
+            m_layers.back().push_back(Neuron());
+            cout << "Made a Neuron!" << endl;
         }
     }
 }
@@ -43,6 +44,10 @@ Net::Net(const vector<unsigned> &topolgy);
 int main(int argc, const char * argv[]) {
     
     vector<unsigned> topology;
+    topology.push_back(3);
+    topology.push_back(2);
+    topology.push_back(1);
+    
     Net myNet(topology);
 
     vector<double> inputVals;

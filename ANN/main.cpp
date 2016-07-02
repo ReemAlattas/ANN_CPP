@@ -15,9 +15,9 @@ class Net
 {
 public:
     Net(topolgy);
-    void feedForward(inputVals);
-    void backProp(targetVals);
-    void getResults(resultVals) const;
+    void feedForward(const vector<double> &inputVals);
+    void backProp(const vector<double> &targetVals);
+    void getResults(vector<double> &resultVals) const;
     
 private:
     
@@ -28,9 +28,12 @@ int main(int argc, const char * argv[]) {
     Net myNet(topology);
 
     vector<double> inputVals;
-    
     myNet.feedForward(inputVals);
+    
+    vector<double> targetVals;
     myNet.backProp(targetVals);
+    
+    vector<double> resultVals;
     myNet.getResults(resultVals);
     
     return 0;
